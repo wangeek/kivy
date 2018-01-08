@@ -183,20 +183,8 @@ build_script:
       #Check-Error
 
     }
-test_script:
-- ps: >-
-    function Check-Error
 
-    {
-      param([int]$SuccessVal = 0)
-      if ($SuccessVal -ne $LastExitCode) {
-        throw "Failed with exit code $LastExitCode"
-      }
-    }
-
-
-    if ($env:DO_TEST -eq "True"){
-      $env:KIVY_GL_BACKEND = "angle_sdl2"
-      python -m nose.core kivy/tests
-      Check-Error
-    }
+artifacts:
+  - path: '..\..\kivy_wheels\*.whl'
+    name: whls 
+    type: zip
