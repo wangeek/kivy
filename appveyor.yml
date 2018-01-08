@@ -1,7 +1,8 @@
 version: 1.0.{build}
 os: Visual Studio 2015
 environment:
-  WHEEL_DIR: C:\kivy_wheels
+  #WHEEL_DIR: C:\kivy_wheels
+  WHEEL_DIR: C:\projects\kivy\kivy_wheels
   KIVY_BUILD_DIR: C:\kivy_build
   DO_WHEEL: True
   KEY_WITH_NO_TEETH:
@@ -185,6 +186,6 @@ build_script:
     }
 
 artifacts:
-  - path: '..\..\kivy_wheels\*.whl'
+  - path: kivy_wheels
     name: whls 
     type: zip
